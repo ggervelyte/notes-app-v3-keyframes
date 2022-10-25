@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #7bdaf3;
+    font-family: roboto;
+    padding: 30px;
+}
+
+#add {
+    padding: 10px 20px;
+    background: #9ec862;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    transition: box-shadow 0.3s;
+}
+
+#add:hover {
+    cursor: pointer;
+    box-shadow: 0 0 5px grey;
+}
+
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.note {
+    background: white;
+    width: 300px;
+    margin-top: 50px;
+    box-shadow: 0 0 5px grey;
+    /* transition: 0.3s; */
+    animation: notesAnim 0.3s;
+}
+
+.note .tools {
+    background: #9ec862;
+    padding: 10px;
+    text-align: right;
+}
+
+.note .tools button {
+    background: none;
+    border: none;
+}
+
+.note .tools button i {
+    color: white;
+    margin: 0 5px;
+    font-size: 1.2em;
+}
+
+.note .tools button i:hover {
+    cursor: pointer;
+    color: black;
+}
+
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+.note .text {
+    height: 400px;
+    padding: 10px;
+    line-height: 25px;
+    /* text-align: justify; */
+    overflow: auto;
+    font-size: 15px;
+    background: rgba(227, 227, 227);
+}
+
+.note .text::-webkit-scrollbar {
+    background: none;
+}
+
+.note .text::-webkit-scrollbar-thumb {
+    width: 100%;
+    height: 10px;
+    background: #9ec862;
+    border-radius: 8px;
+}
+
+.note textarea {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 396px;
+    font-family: roboto;
+    font-size: 15px;
+    padding: 10px;
+    line-height: 25px;
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.removeAnim {
+    animation: removeAnimation 0.3s;
+}
+
+@keyframes notesAnim {
+    from {
+        opacity: 0;
+        width: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 300px;
+    }
+}
+
+@keyframes removeAnimation {
+    from {
+        opacity: 1;
+        width: 300px;
+    }
+
+    to {
+        opacity: 0;
+        width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    #add {
+        right: 50px;
+    }
+    .notes {
+        justify-content: center;
+    }
+    .note {
+        width: 90% !important;
+    }
+}
